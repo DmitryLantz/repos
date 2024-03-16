@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-public class LastDigitOfHugeNumber 
+public class LastDigitOfHugeNumber  // 36 366 98 989
 {
     static void Main(string[] args)
     {

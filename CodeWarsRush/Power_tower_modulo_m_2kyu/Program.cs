@@ -6,6 +6,8 @@ public class PowerTowerModuloM
     {
         Console.WriteLine(EulersTotientPhi(8769));
 
+        Console.WriteLine(EulersTotientPhi(753));
+
         Console.WriteLine(Tower(25588, 27805, 768));
     }
 

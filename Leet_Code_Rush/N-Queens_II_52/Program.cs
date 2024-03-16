@@ -5,7 +5,7 @@
 
     static void Main(string[] args)
     {
-        Console.WriteLine("All placements number: " + TotalNQueens(15) + "\n");
+        Console.WriteLine("All placements number: " + TotalNQueens(8) + "\n");
 
         Console.WriteLine("All placements Queens coordinates:\n");
 

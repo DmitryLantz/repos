@@ -12,7 +12,7 @@ namespace Fractalizing
 {
     public partial class Form1 : Form
     {
-        public static readonly double initialLength = 128;
+        public static readonly double initialLength = 128 + 128;
 
         public Form1()
         {
@@ -39,30 +39,30 @@ namespace Fractalizing
      
             g.DrawLine(new Pen(Color.Black, (float) length / 20), (int) x, panel1.Height - (int) y, (int) newX, panel1.Height - (int) newY);
 
-            if (length >= 1) 
+            if (length > 4) 
             {
-                if (angle <= -30)
+                if (angle <= 0)
                 {
-                    RecursiveFractalPainter(newX, newY, length / 1.75, angle - 60, e);                   
+                    RecursiveFractalPainter(newX, newY, length / 1.23, angle - 25, e);
                 }
-                else if (angle >= 30)
-                {
-                    RecursiveFractalPainter(newX, newY, length / 1.75, angle + 60, e);
+                if (angle >= 0)
+                { 
+                    RecursiveFractalPainter(newX, newY, length / 1.23, angle + 25, e);
                 }
-                else 
-                {
-                    RecursiveFractalPainter(newX, newY, length / 1.75, angle + 90, e);
-                    RecursiveFractalPainter(newX, newY, length / 1.75, angle - 90, e);
-                }  
 
-                // RecursiveFractalPainter(newX, newY, length / 1.15, angle, e);
+                RecursiveFractalPainter(newX, newY, length / 2.6, angle, e);
+
+                if (angle == 0) 
+                {
+                    RecursiveFractalPainter(newX, newY, length / 1.3, angle, e);
+                }
             }          
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-            RecursiveFractalPainter(panel1.Width / 2.0, 64, initialLength, 0, e);
+            RecursiveFractalPainter(panel1.Width / 2, -128, initialLength, 0, e);
 
         }
     }

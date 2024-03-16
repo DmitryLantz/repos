@@ -5,7 +5,7 @@ public class Expressions
     public static int counter;
     public static int sols;
 
-    static void Main(string[] args)
+    static void Main(string[] args)  // 36 366 98 989
     {
         int n = 1000;
         int digit = 8;
@@ -31,7 +31,7 @@ public class Expressions
         counter = 0;
         sols = 0;
 
-        RecSeekerNonPar(n, digit, length, 0, 0, "", 0, "");
+        // RecSeekerNonPar(n, digit, length, 0, 0, "", 0, "");
 
         Console.WriteLine($"Counter: {counter}, sols: {sols}");
 
@@ -44,7 +44,7 @@ public class Expressions
         counter = 0;
         sols = 0;
 
-        // RecSeekerAux(n, digit, length, 0, 0, "", 0, "");
+        RecSeekerAux(n, digit, length, 0, 0, "", 0, "");
 
         Console.WriteLine($"Counter: {counter}, sols: {sols}");
 
@@ -98,7 +98,7 @@ public class Expressions
 
                 RecSeekerAux(aim, digit, length, digitsUsed + i, currSum, expression, currParSum - GetNumber(i, digit), currParExp + $" - {GetNumber(i, digit)}");
 
-                RecSeekerAux(aim, digit, length, digitsUsed + i, currSum, expression, currParSum + GetNumber(i, digit), "(" + currParExp + ")" + $" * {GetNumber(i, digit)}");
+                RecSeekerAux(aim, digit, length, digitsUsed + i, currSum, expression, currParSum * GetNumber(i, digit), "(" + currParExp + ")" + $" * {GetNumber(i, digit)}");
 
                 if (currParSum % GetNumber(i, digit) == 0) RecSeekerAux(aim, digit, length, digitsUsed + i, currSum, expression, currParSum / GetNumber(i, digit), "(" + currParExp + ")" + $" / {GetNumber(i, digit)}");              
             }
@@ -109,7 +109,7 @@ public class Expressions
             // adding a nested perenthesis to the main path
             RecSeekerAux(aim, digit, length, digitsUsed, currSum * currParSum, $"({expression}) * ({currParExp})", 0, ""); 
 
-            if (currParSum != 0 && currSum % currParSum == 0) RecSeekerAux(aim, digit, length, digitsUsed, currSum * currParSum, $"({expression}) / ({currParExp})", 0, "");
+            if (currParSum != 0 && currSum % currParSum == 0) RecSeekerAux(aim, digit, length, digitsUsed, currSum / currParSum, $"({expression}) / ({currParExp})", 0, "");
         }
     }
 

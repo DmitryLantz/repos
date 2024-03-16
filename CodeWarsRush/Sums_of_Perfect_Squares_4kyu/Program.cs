@@ -4,7 +4,7 @@
     {
         // FuckYourComp();
 
-        Console.WriteLine(NSquaresFor(13));
+        Console.WriteLine(NSquaresFor(1313166989));
     }
 
     public static int NSquaresFor(int n)
@@ -22,7 +22,7 @@
             if (currSqrt * currSqrt == currDiff) return 2;
         }
 
-        while (n % 4 == 0) n /= 4;
+        while (n % 4 == 0) n /= 4;  // 36 366 98 989 98989
 
         if (n % 8 == 7) return 4;
 

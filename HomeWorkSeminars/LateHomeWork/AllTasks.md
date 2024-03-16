@@ -231,3 +231,5 @@ info = {2, 3, 3, 1 }
 ```
 Задача: найти M при заданном N и получить одно из разбиений на группы
 N ≤ 10²⁰
+
+Thanks900k SorcererEmpire AFSAnniversary

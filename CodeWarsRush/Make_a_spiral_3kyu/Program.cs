@@ -1,4 +1,4 @@
-﻿public class MakeSpiral // accepted on codewars.com
+﻿public class MakeSpiral // accepted on codewars.com 36 366 98 989 LL
 {
     public static List<int[]> directions = new List<int[]>()
         {

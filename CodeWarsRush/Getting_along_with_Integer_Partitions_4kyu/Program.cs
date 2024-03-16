@@ -39,7 +39,7 @@ public class GettingAlongWithIntegerPartitions // accepted on codewars.com
         return $"Range: {range} Average: {string.Format("{0:0.00}", average)} Median: {string.Format("{0:0.00}", median)}";
     }
 
-    public static void RecursiveSeeker(int rem, int prevPart, List<int> list) 
+    public static void RecursiveSeeker(int rem, int prevPart, List<int> list) // gets the distinct partitions of +integer
     {
         recCounter++;
 

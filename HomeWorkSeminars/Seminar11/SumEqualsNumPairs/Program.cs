@@ -2,9 +2,9 @@
 {
     static void Main(string[] args)
     {
-        int[] array = new int[] { 2, 3, 4, 6, 7, 8, 9, 10, 12, 15, 98 };
+        int[] array = new int[] { 2, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 15, 98 };
         int target = 15;
-
+        // array = GetRandomArray(10000, 100000);
         FindAllThePairs(array, target);
 
         Console.WriteLine("\n");
@@ -20,6 +20,16 @@
                 Console.WriteLine($"value: {pair.Key} at index: {pair.Value}");
             }
         }
+    }
+
+    public static int[] GetRandomArray(int length, int maxAbs) 
+    { 
+        Random random = new Random();
+        int[] array = new int[length];
+
+        for (int i = 0; i < length; i++) array[i] = random.Next(-maxAbs, maxAbs + 1);
+        
+        return array;
     }
 
     public static void FindAllThePairs(int[] array, int sum) // O(n) runtime approx
@@ -55,7 +65,10 @@
             {
                 foreach (Dictionary<int, int> innerPair in currListOfPairs)
                 {
-                    innerPair.Add(array[i], i);
+                    if (!innerPair.ContainsKey(array[i])) 
+                    { 
+                        innerPair.Add(array[i], i); 
+                    }                   
                 }
 
                 resultListOfTriplets.AddRange(currListOfPairs);
@@ -93,9 +106,9 @@
     }
 
     public static List<Dictionary<int, int>> FindAllValElementsSums(int[] array, int k, int sum)
-    { 
+    {
 
-
+        return new List<Dictionary<int, int>>();
 
     }
 }

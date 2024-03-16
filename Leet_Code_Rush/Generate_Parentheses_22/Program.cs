@@ -6,9 +6,13 @@ public class GenerateParentheses22
     public static int N;
     public static void Main(string[] args)
     {
-        IList<string> list = GenerateParenthesis(12);
-        Console.WriteLine(list.Count);
-        //foreach (string s in list) Console.WriteLine(s); ;
+        for (int i = 0; i < 5; i++)
+        {
+            IList<string> list = GenerateParenthesis(i);
+            Console.WriteLine(list.Count);
+            foreach (string s in list) Console.Write(s + "  ");
+            Console.WriteLine();
+        }
     }
 
     public static IList<string> GenerateParenthesis(int n)

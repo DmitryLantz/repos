@@ -8,7 +8,7 @@
 
         Console.WriteLine(k);
 
-        Console.WriteLine(Running(17));
+        Console.WriteLine(Running(7));
 
     }
 
